@@ -1,9 +1,21 @@
-const removeFromArray = function(array, ...args) {
+const removeFromArray = function(array, args) {
     const newArray = [];
 
-    for (const item of array) {
-        if (!args.includes(item)) {
-            newArray.push(item);
+    outer:
+    for (let i = 0; i < array.length; i++) {
+
+        let containsitem = false;
+        
+        for (let j = 1; j < arguments.length; j++) {
+            
+            if (array[i] === arguments[j]) {
+                containsitem = true;
+                continue outer;
+            }
+        }
+        
+        if (!containsitem) {
+            newArray.push(array[i]);
         }
     }
     return newArray;
