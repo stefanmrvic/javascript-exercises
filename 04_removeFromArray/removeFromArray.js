@@ -1,7 +1,6 @@
 const removeFromArray = function(array, args) {
     const newArray = [];
 
-    outer:
     for (let i = 0; i < array.length; i++) {
 
         let containsitem = false;
@@ -10,10 +9,10 @@ const removeFromArray = function(array, args) {
             
             if (array[i] === arguments[j]) {
                 containsitem = true;
-                continue outer;
+                break;
             }
         }
-        
+
         if (!containsitem) {
             newArray.push(array[i]);
         }
