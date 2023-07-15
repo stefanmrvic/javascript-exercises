@@ -4,6 +4,8 @@ const removeFromArray = function(array, args) {
     for (let i = 0; i < array.length; i++) {
 
         let containsitem = false;
+
+        console.log(array.includes(2));
         
         for (let j = 1; j < arguments.length; j++) {
             
